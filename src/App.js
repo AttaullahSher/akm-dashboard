@@ -5,7 +5,7 @@ import Reports from './Reports';
 import * as XLSX from 'xlsx';
 import moment from 'moment';
 
-const EXCEL_DIRECT_URL = 'https://onedrive.live.com/download?cid=acde0499edd1a197&resid=EQIN3wXRSR9CnenutlesCSYB1xH3ztgbGQu1ZJcBB8Vtzw&authkey=w5j03f';
+const EXCEL_DIRECT_URL = 'https://onedrive.live.com/embed?cid=acde0499edd1a197&resid=EQIN3wXRSR9CnenutlesCSYB1xH3ztgbGQu1ZJcBB8Vtzw&authkey=w5j03f&em=2&wdDownload=1';
 
 function App() {
   const [records, setRecords] = useState([]);
