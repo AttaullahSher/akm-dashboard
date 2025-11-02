@@ -11,6 +11,7 @@ function App() {
   const [records, setRecords] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [warning, setWarning] = useState('');
 
   // ---------- Load Excel ----------
   useEffect(() => {
@@ -47,7 +48,8 @@ function App() {
 
         setRecords(merged);
       } catch (e) {
-        setError(e.message);
+        setWarning(`Failed to load Excel data: ${e.message}. Dashboard will show with empty data.`);
+        setRecords([]);
       } finally {
         setLoading(false);
       }
@@ -111,6 +113,7 @@ function App() {
   return (
     <Container>
       <h1>Invoice Dashboard</h1>
+      {warning && <Alert variant="warning">{warning}</Alert>}
       <DashboardTable records={records} toggleStatus={toggleStatus} />
       <Reports records={records} />
     </Container>
